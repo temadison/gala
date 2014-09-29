@@ -1,0 +1,42 @@
+# EMBEDDED SERVER CONFIGURATION
+server:
+    port: 8181
+
+# SPRING
+spring:
+
+# DATASOURCE
+    datasource:
+        # DERBY
+#        driverClassName: org.apache.derby.jdbc.EmbeddedDriver
+#        url: jdbc:derby:src/main/resources/webdb
+#        username: snidely
+#        password: whiplash
+
+        # MYSQL
+        driverClassName: com.mysql.jdbc.Driver
+        url: jdbc:mysql://localhost/gala
+        username: gala
+        password: gala
+
+# JPA
+    jpa:
+        # DERBY
+#        database: derby
+#        database-platform: org.hibernate.dialect.DerbyTenSevenDialect
+
+        # MYSQL
+        database: mysql
+        database-platform: org.hibernate.dialect.MySQL5Dialect
+
+        hibernate:
+            naming_strategy: org.hibernate.cfg.ImprovedNamingStrategy
+        # DERBY
+#            ddl-auto: none
+        # MYSQL
+            ddl-auto: create-drop
+
+        show-sql: true
+
+# MISCELLANEOUS
+name: Marvin K. Martian
